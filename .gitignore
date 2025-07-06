@@ -1,4 +1,10 @@
+# React Native
 node_modules/
-android/.gradle
-ios/build
+android/.gradle/
+android/app/build/
+android/build/
+android/.idea/
 .env
+*.iml
+*.apk
+*.so
