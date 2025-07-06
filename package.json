@@ -1,0 +1,28 @@
+{
+  "name": "Drone-Cookie-Delivery",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "server": "cd server && npx nodemon server.js",
+    "mobile": "react-native start",
+    "start": "concurrently \"npm run server\" \"npm run mobile\"",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-native": "^0.80.1",
+    "react-native-config": "^1.5.5",
+    "react-native-dotenv": "^3.4.11"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "latest",
+    "@react-native-community/template": "^0.80.1",
+    "@react-native/metro-config": "^0.80.1",
+    "concurrently": "^9.2.0",
+    "react-native-eject": "^1.0.2"
+  }
+}
