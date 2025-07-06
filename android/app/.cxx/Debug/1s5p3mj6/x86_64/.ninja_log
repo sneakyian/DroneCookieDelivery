@@ -1,6 +1,0 @@
-# ninja log v5
-3	47	0	C:/Users/ianmc/Documents/Drone-Cookie-Delivery/android/app/.cxx/Debug/1s5p3mj6/x86_64/CMakeFiles/cmake.verify_globs	729fb47740ea24f8
-5	2176	7733936393436148	CMakeFiles/appmodules.dir/C_/Users/ianmc/Documents/Drone-Cookie-Delivery/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	27d116f722311d9f
-1	2407	7733936395724062	CMakeFiles/appmodules.dir/OnLoad.cpp.o	9ae78efc83eae369
-2407	2507	7733936396789509	C:/Users/ianmc/Documents/Drone-Cookie-Delivery/android/app/build/intermediates/cxx/Debug/1s5p3mj6/obj/x86_64/libappmodules.so	436ae6982a6758fc
-3	25	0	C:/Users/ianmc/Documents/Drone-Cookie-Delivery/android/app/.cxx/Debug/1s5p3mj6/x86_64/CMakeFiles/cmake.verify_globs	729fb47740ea24f8
