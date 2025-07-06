@@ -1,11 +1,21 @@
 # React Native
 node_modules/
+.expo/
+.expo-shared/
+metro-cache/
+*.jks
+*.keystore
+metro.config.js.local
+
+# Android
 android/.gradle/
 android/app/build/
 android/build/
 android/.idea/
-.env
-*.iml
+android/.cxx/
+android/local.properties
+android/*.hprof
+android/captures/
 *.apk
 *.so
 
@@ -16,18 +26,69 @@ ios/Podfile.lock
 ios/DerivedData/
 ios/*.xcworkspace
 ios/*.xcuserstate
+ios/*.xcodeproj/*.xcuserstate
+ios/*.xcodeproj/xcshareddata/
+ios/*.xcarchive
+ios/Logs/
 
 # Xcode user-specific files
 ios/*.xcodeproj/project.xcworkspace/xcuserdata/
 ios/*.xcodeproj/xcuserdata/
-ios/.DS_Store
 
 # Fastlane (if used)
 ios/fastlane/report.xml
 ios/fastlane/screenshots
 
-# Misc
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+*.p12
+*.cer
+*.cert
+*.pem
+
+# JavaScript/Node.js
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+coverage/
+dist/
+build/
+
+# Editor/IDE files
+.vscode/
+*.swp
+*.swo
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Ninja build files
+.ninja_log
+.ninja_deps
+
+# Testing/CI
+*.log
+junit.xml
+test-results/
+artifacts/
+
+# Miscellaneous
+*.bak
+*.tmp
+*.temp
+Thumbs.db
 *.pbxuser
 *.mode1v3
 *.mode2v3
 *.perspectivev3
+*.lock
