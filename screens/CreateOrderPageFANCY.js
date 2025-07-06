@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image, Animated, PanResponder, Dimensions } fro
 const cookies = [
   { name: 'Chocolate Chip', image: require('../assets/cookies/choc-chip.png') },
   { name: 'Oatmeal', image: require('../assets/cookies/oatmeal.png') },
-  { name: 'Snickerdoodle', image: require('../assets/cookies/snickerdoodle.png') },
+  { name: 'Snickerdoodle', image: require('../assets/cookies/SnickerDoodle.png') },
   { name: 'Sugar', image: require('../assets/cookies/sugar.png') },
 ];
 
