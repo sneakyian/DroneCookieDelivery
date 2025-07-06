@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 export default function LandingPage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/cookie-drone.png')} style={styles.logo} />
+      <Image source={require('../assets/LandingPage/CookieDrone.png')} style={styles.logo} />
       <Text style={styles.title}>Drone Cookie Delivery</Text>
       <Text style={styles.subtitle}>Fresh cookies. Flown to you.</Text>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CreateOrder')}>
