@@ -8,3 +8,26 @@ android/.idea/
 *.iml
 *.apk
 *.so
+
+# iOS build artifacts and caches
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+ios/DerivedData/
+ios/*.xcworkspace
+ios/*.xcuserstate
+
+# Xcode user-specific files
+ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+ios/.DS_Store
+
+# Fastlane (if used)
+ios/fastlane/report.xml
+ios/fastlane/screenshots
+
+# Misc
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
