@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import axios from 'axios';
+
 
 export default function OrderStatus({ route, navigation }) {
   const { cartItems, name, address, contact } = route.params;
@@ -25,7 +26,7 @@ export default function OrderStatus({ route, navigation }) {
 
   useEffect(() => {
     // POST order to backend when screen loads
-    axios.post('http://66.249.68.32:4000/orders', {
+    axios.post('http://192.168.1.215:4000/orders', {
       name,
       address,
       contact,
