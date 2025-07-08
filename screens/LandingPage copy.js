@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Animated, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LandingPage({ navigation }) {
@@ -17,6 +17,7 @@ export default function LandingPage({ navigation }) {
   }, [floatAnim]);
 
   useEffect(() => {
+    // Check if user is saved in AsyncStorage
     const getUser = async () => {
       try {
         const userData = await AsyncStorage.getItem('user');
@@ -79,7 +80,6 @@ export default function LandingPage({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFF8E7' },
-  logo: { width: 150, height: 150, marginBottom: 30 },
   title: { fontSize: 32, fontWeight: 'bold', marginBottom: 10, color: '#6B3E26', fontFamily: 'sans-serif-medium' },
   subtitle: { fontSize: 18, marginBottom: 40, color: '#8C7B6B' },
   welcome: { fontSize: 20, marginBottom: 20, color: '#6B3E26' },

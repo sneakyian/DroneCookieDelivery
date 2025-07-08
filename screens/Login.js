@@ -1,42 +1,35 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Signup({ navigation }) {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignup = async () => {
+  const handleLogin = async () => {
     try {
-      const res = await axios.post('http://192.168.1.215:4000/users/signup', { email, name, password });
+      const res = await axios.post('http://192.168.1.215:4000/users/login', { email, password });
       if (res.data.success) {
-        Alert.alert('Signup Success', 'Account created! You can now log in.');
-        navigation.navigate('Landing'); // If you have a login screen
+        await AsyncStorage.setItem('user', JSON.stringify(res.data.user));
+        navigation.navigate('Landing');
       } else {
-        Alert.alert('Error', res.data.error || 'Signup failed.');
+        Alert.alert('Login Failed', res.data.error || 'Try again.');
       }
     } catch (err) {
-      Alert.alert('Signup Failed', err.response?.data?.error || err.message);
+      Alert.alert('Login Error', err.response?.data?.error || err.message);
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Create an Account</Text>
+      <Text style={styles.header}>Login</Text>
       <TextInput
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
         style={styles.input}
-        keyboardType="email-address"
         autoCapitalize="none"
-      />
-      <TextInput
-        placeholder="Name"
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
       />
       <TextInput
         placeholder="Password"
@@ -45,8 +38,8 @@ export default function Signup({ navigation }) {
         style={styles.input}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.signupButton} onPress={handleSignup}>
-        <Text style={styles.signupText}>Sign Up</Text>
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+        <Text style={styles.loginText}>Login</Text>
       </TouchableOpacity>
     </View>
   );
@@ -56,6 +49,6 @@ const styles = StyleSheet.create({
   container: { flex:1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF8E7', padding: 20 },
   header: { fontSize: 28, fontWeight: 'bold', marginBottom: 30, color: '#6B3E26' },
   input: { width: '100%', borderWidth: 1, borderColor: '#ccc', borderRadius: 8, padding: 10, marginBottom: 15, fontSize: 16 },
-  signupButton: { backgroundColor: '#6B3E26', padding: 15, borderRadius: 10, width: '100%', alignItems: 'center' },
-  signupText: { color: 'white', fontWeight: 'bold', fontSize: 18 },
+  loginButton: { backgroundColor: '#6B3E26', padding: 15, borderRadius: 10, width: '100%', alignItems: 'center' },
+  loginText: { color: 'white', fontWeight: 'bold', fontSize: 18 },
 });

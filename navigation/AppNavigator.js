@@ -8,6 +8,8 @@ import ConfirmOrder from '../screens/ConfirmOrder';
 import UserInfo from '../screens/UserInfo';
 import OrderStatus from '../screens/OrderStatus';
 import Signup from '../screens/Signup';
+import Login from '../screens/Login';
+
 
 
 
@@ -19,6 +21,7 @@ export default function AppNavigator() {
       <Stack.Navigator initialRouteName="Landing">
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Landing" component={LandingPage} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="CreateOrder" component={CreateOrderPage} options={{ title: 'Create Order' }} />
         <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} />
         <Stack.Screen name="UserInfo" component={UserInfo} />
