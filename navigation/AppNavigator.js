@@ -7,6 +7,9 @@ import CreateOrderPage from '../screens/CreateOrderPage';
 import ConfirmOrder from '../screens/ConfirmOrder';
 import UserInfo from '../screens/UserInfo';
 import OrderStatus from '../screens/OrderStatus';
+import Signup from '../screens/Signup';
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +17,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Landing">
+        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Landing" component={LandingPage} options={{ headerShown: false }} />
         <Stack.Screen name="CreateOrder" component={CreateOrderPage} options={{ title: 'Create Order' }} />
         <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} />

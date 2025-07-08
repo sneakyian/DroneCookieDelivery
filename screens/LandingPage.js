@@ -21,6 +21,9 @@ export default function LandingPage({ navigation }) {
       />
       <Text style={styles.title}>Fly Biscuits</Text>
       <Text style={styles.subtitle}>Fresh cookies. Flown to you.</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+       <Text style={{ color: '#6B3E26' }}>Sign Up</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CreateOrder')}>
         <Text style={styles.buttonText}>Order Now</Text>
       </TouchableOpacity>
