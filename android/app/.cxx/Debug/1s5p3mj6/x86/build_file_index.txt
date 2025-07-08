@@ -1,1 +1,0 @@
-C:\Users\ianmc\Documents\Drone-Cookie-Delivery\node_modules\react-native\ReactAndroid\cmake-utils\default-app-setup\CMakeLists.txt

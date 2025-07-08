@@ -13,6 +13,7 @@ android/app/build/
 android/build/
 android/.idea/
 android/.cxx/
+android/app/.cxx/
 android/local.properties
 android/*.hprof
 android/captures/
