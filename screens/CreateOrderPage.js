@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList, Button } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Text, StyleSheet, Animated, TouchableOpacity, FlatList, Image } from 'react-native';
 
 const cookies = [
   { name: 'Chocolate Chip', image: require('../assets/cookies/choc-chip.png') },
   { name: 'Oatmeal', image: require('../assets/cookies/oatmeal.png') },
-  { name: 'Snickerdoodle', image: require('../assets/cookies/SnickerDoodle.png') },
+  { name: 'Snickerdoodle', image: require('../assets/cookies/SnickerDoodle.png') }, // Make sure spelling/case matches!
   { name: 'Sugar', image: require('../assets/cookies/sugar.png') },
 ];
 
 export default function CreateOrderPage({ navigation }) {
   const [quantities, setQuantities] = useState([0, 0, 0, 0]);
 
+  // Create scale animations for each cookie
+  const scaleAnims = cookies.map(() => useRef(new Animated.Value(1)).current);
+
+  const triggerScale = (index) => {
+    Animated.sequence([
+      Animated.timing(scaleAnims[index], { toValue: 1.2, duration: 100, useNativeDriver: true }),
+      Animated.timing(scaleAnims[index], { toValue: 1, duration: 100, useNativeDriver: true }),
+    ]).start();
+  };
+
   const addQuantity = (index) => {
     const newQ = [...quantities];
     newQ[index]++;
     setQuantities(newQ);
+    triggerScale(index);
   };
 
   const removeQuantity = (index) => {
     const newQ = [...quantities];
     if (newQ[index] > 0) newQ[index]--;
     setQuantities(newQ);
+    triggerScale(index);
   };
 
   const cartItems = cookies
@@ -35,7 +47,13 @@ export default function CreateOrderPage({ navigation }) {
         keyExtractor={item => item.name}
         renderItem={({ item, index }) => (
           <View style={styles.cookieCard}>
-            <Image source={item.image} style={styles.cookieImage} />
+            <Animated.Image
+              source={item.image}
+              style={[
+                styles.cookieImage,
+                { transform: [{ scale: scaleAnims[index] }] },
+              ]}
+            />
             <Text style={styles.cookieName}>{item.name}</Text>
             <View style={styles.quantityRow}>
               <TouchableOpacity onPress={() => removeQuantity(index)} style={styles.qtyButton}>
