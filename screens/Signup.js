@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Dimensions, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
+import AnimatedDrone from '../shared/AnimatedDrone';
+const { width, height } = Dimensions.get('window');
 
 export default function Signup({ navigation }) {
   const [email, setEmail] = useState('');
@@ -23,6 +25,13 @@ export default function Signup({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <AnimatedDrone
+        source={require('../assets/drones/BackgroundDrone.png')}
+        startX={-80} startY={40}
+        endX={width - 80} endY={height / 4}
+        duration={8000} size={80} opacity={0.13} delay={0} rotate={-15}
+      />
+
       <Text style={styles.header}>Create an Account</Text>
       <TextInput
         placeholder="Email"
@@ -53,7 +62,7 @@ export default function Signup({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex:1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF8E7', padding: 20 },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF8E7', padding: 20 },
   header: { fontSize: 28, fontWeight: 'bold', marginBottom: 30, color: '#6B3E26' },
   input: { width: '100%', borderWidth: 1, borderColor: '#ccc', borderRadius: 8, padding: 10, marginBottom: 15, fontSize: 16 },
   signupButton: { backgroundColor: '#6B3E26', padding: 15, borderRadius: 10, width: '100%', alignItems: 'center' },

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Dimensions, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AnimatedDrone from '../shared/AnimatedDrone';
+const { width, height } = Dimensions.get('window');
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
@@ -23,6 +25,12 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <AnimatedDrone
+          source={require('../assets/drones/BackgroundDrone.png')}
+          startX={-80} startY={40}
+          endX={width - 80} endY={height / 4}
+          duration={8000} size={80} opacity={0.13} delay={0} rotate={-15}
+        />
       <Text style={styles.header}>Login</Text>
       <TextInput
         placeholder="Email"
