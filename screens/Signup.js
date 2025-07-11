@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Dimensions, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
+import AnimatedCloud from '../shared/AnimatedCloud';
 import AnimatedDrone from '../shared/AnimatedDrone';
 const { width, height } = Dimensions.get('window');
 
@@ -25,6 +26,31 @@ export default function Signup({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <AnimatedCloud
+        source={require('../assets/background/cloud1.png')}
+        startY={60}
+        size={180}
+        opacity={0.2}
+        duration={31000}
+        delay={0}
+      />
+      <AnimatedCloud
+        source={require('../assets/background/cloud2.png')}
+        startY={180}
+        size={140}
+        opacity={0.15}
+        duration={26000}
+        delay={3000}
+      />
+      <AnimatedCloud
+        source={require('../assets/background/cloud3.png')}
+        startY={35}
+        size={180}
+        opacity={0.2}
+        duration={17000}
+        delay={0}
+      />
+
       <AnimatedDrone
         source={require('../assets/drones/BackgroundDrone.png')}
         startX={-80} startY={40}
@@ -57,7 +83,33 @@ export default function Signup({ navigation }) {
       <TouchableOpacity style={styles.signupButton} onPress={handleSignup}>
         <Text style={styles.signupText}>Sign Up</Text>
       </TouchableOpacity>
+
+      <AnimatedCloud
+        source={require('../assets/background/cloud2.png')}
+        startY={700}
+        size={140}
+        opacity={0.15}
+        duration={22000}
+        delay={3000}
+      />
+      <AnimatedCloud
+        source={require('../assets/background/cloud1.png')}
+        startY={600}
+        size={180}
+        opacity={0.2}
+        duration={23000}
+        delay={0}
+      />
+      <AnimatedCloud
+        source={require('../assets/background/cloud3.png')}
+        startY={650}
+        size={180}
+        opacity={0.2}
+        duration={26000}
+        delay={0}
+      />
     </View>
+
   );
 }
 

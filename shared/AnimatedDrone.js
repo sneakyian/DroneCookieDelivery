@@ -23,7 +23,7 @@ export default function AnimatedDrone({ source, startX, startY, endX, endY, dura
         Animated.timing(rotAnim, {
           toValue: 1,
           duration: duration * 2,
-          useNativeDriver: false,
+          useNativeDriver: false, 
         }),
       ])
     );
@@ -45,9 +45,9 @@ export default function AnimatedDrone({ source, startX, startY, endX, endY, dura
         top: yAnim,
         width: size,
         height: size,
-        opacity: opacity,
-        transform: [{ rotate: spin }],
-        zIndex: -1,
+        opacity: 1,
+        zIndex: 1,
+        transform: [{ rotate: spin }]
       }}
       pointerEvents="none"
       resizeMode="contain"

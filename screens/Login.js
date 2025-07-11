@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Dimensions, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AnimatedCloud from '../shared/AnimatedCloud';
 import AnimatedDrone from '../shared/AnimatedDrone';
 const { width, height } = Dimensions.get('window');
 
@@ -25,6 +26,30 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <AnimatedCloud
+        source={require('../assets/background/cloud1.png')}
+        startY={60}
+        size={180}
+        opacity={0.2}
+        duration={31000}
+        delay={0}
+      />
+      <AnimatedCloud
+        source={require('../assets/background/cloud2.png')}
+        startY={180}
+        size={140}
+        opacity={0.15}
+        duration={26000}
+        delay={3000}
+      />
+      <AnimatedCloud
+          source={require('../assets/background/cloud3.png')}
+          startY={35}
+          size={180}
+          opacity={0.2}
+          duration={16000}
+          delay={0}
+        />
       <AnimatedDrone
           source={require('../assets/drones/BackgroundDrone.png')}
           startX={-80} startY={40}
@@ -49,6 +74,31 @@ export default function Login({ navigation }) {
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginText}>Login</Text>
       </TouchableOpacity>
+
+      <AnimatedCloud
+        source={require('../assets/background/cloud2.png')}
+        startY={700}
+        size={140}
+        opacity={0.15}
+        duration={20000}
+        delay={3000}
+        />
+        <AnimatedCloud
+          source={require('../assets/background/cloud1.png')}
+          startY={600}
+          size={180}
+          opacity={0.2}
+          duration={18000}
+          delay={0}
+        />
+        <AnimatedCloud
+          source={require('../assets/background/cloud3.png')}
+          startY={650}
+          size={180}
+          opacity={0.2}
+          duration={16000}
+          delay={0}
+        />
     </View>
   );
 }
