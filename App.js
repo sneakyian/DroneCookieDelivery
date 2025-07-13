@@ -3,6 +3,7 @@ import React from 'react';
 import { MONGO_URI } from '@env';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import AppNavigator from './navigation/AppNavigator';
+//import 'react-native-get-random-values';
 
 
 export default function App() {
